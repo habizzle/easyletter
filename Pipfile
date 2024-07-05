@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fpdf2 = "*"
+click = "*"
+pyyaml = "*"
+pyinstaller = "*"
+ttf-opensans = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

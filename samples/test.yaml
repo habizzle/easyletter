@@ -1,0 +1,19 @@
+address:
+  sender: |-
+    Max Mustermann
+    Teststrasse 123
+    12345 Hasenhausen
+  recipient: |-
+    Jane Doe
+    Zielstraße 1
+    98765 Berlinchen
+location: Hasenhausen
+subject: Test subject
+content: |-
+  Sehr geehrte Damen und Herren,
+
+  hört, hört! Das ist ja __toll__!
+ending: Beste Grüße
+contact:
+  email: test@istkorrekt.de
+  phone: (+49) 1234 56789
