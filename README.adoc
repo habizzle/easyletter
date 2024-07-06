@@ -1,0 +1,20 @@
+= ★ easyletter -- _for easy letters_ ★
+
+== Introduction
+
+easyletter allows you to create simple, formal documents, which are oriented at DIN 5008, although not strictly complying to that norm. The main goals of this tool are:
+
+* Make the creation of simple letters for every-day-use very easy
+* Letters should fit into normal envelopes with window
+* Produce a cross-platform output (PDF)
+
+== Install & Use
+
+The tool is Python based and can be installed with `pipenv`.
+
+[source, shell]
+----
+$ pipenv run python easyletter.py samples/test.yaml
+----
+
+You can modify the content of the letter by customizing either the provided YAML file.
