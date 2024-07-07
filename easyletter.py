@@ -40,7 +40,7 @@ def parse_yaml(yaml_path):
             sender_block = f"{document.get('address').get('sender')}"
             sender_fragments = sender_block.splitlines()
             formatted_sender = " • ".join(sender_fragments)
-            pdf.set_font(font_name, size=8)
+            pdf.set_font(font_name, size=6)
             pdf.set_y(45)        
             pdf.cell(
                 text=formatted_sender,
@@ -78,7 +78,8 @@ def parse_yaml(yaml_path):
             pdf.multi_cell(
                 text=content,
                 markdown=True,
-                w=0
+                w=0,
+                h=line_height
             )
             
             ending_defined = document.get('ending')
@@ -92,13 +93,19 @@ def parse_yaml(yaml_path):
             
             contact_email = document.get('contact').get('email')
             contact_phone = document.get('contact').get('phone')
-            contact = f"E-Mail: {contact_email} • Telefon: {contact_phone}"
-            pdf.set_y(-25)
+            contact = f"""
+            {sender_block}
+            
+            E-Mail: {contact_email}
+            Telefon: {contact_phone}
+            """
+            pdf.set_xy(-100, 25)
             pdf.set_font(font_name, size=10)
-            pdf.cell(
+            pdf.multi_cell(
                 text=contact,
-                align='C',
-                w=0
+                align='R',
+                w=90,
+                h=5
             )
             
             pdf_base_file_name=Path(yaml_path).stem
