@@ -5,6 +5,7 @@ from pathlib import Path
 import yaml
 from fpdf import FPDF
 import ttf_opensans
+import locale
 
 
 @click.command()
@@ -90,14 +91,14 @@ def create_pdf(document) -> FPDF:
         h=line_height
     )
     
-    ending_defined = document.get('ending')
-    ending = ending_defined if ending_defined is None else "Beste Grüße"
-    pdf.set_y(pdf.get_y() + 15)
-    pdf.cell(text=ending)
-    
-    signature_name = sender_fragments[0]
-    pdf.set_y(pdf.get_y() + 30)
-    pdf.cell(text=signature_name)
+    ending = document.get('ending')
+    if ending is not None:
+        pdf.set_y(pdf.get_y() + 15)
+        pdf.cell(text=ending)
+        
+        signature_name = sender_fragments[0]
+        pdf.set_y(pdf.get_y() + 30)
+        pdf.cell(text=signature_name)
     
     contact = document.get('contact')
     contact_items = []

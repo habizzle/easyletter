@@ -23,6 +23,8 @@ You can modify the content of the letter by customizing either the provided YAML
 
 All relevant configurations can be looked up in `in/sample.yml`.
 
+=== Contact section
+
 In the `contact` section, you can add arbitrary properties.
 All properties will be printed in a box to the right, directly below the sender address.
 The property key will be printed out, so they can be escaped with single quotes, e.g.:
@@ -36,3 +38,8 @@ contact:
 will be printed out as
 
 > Item 1: Text for item 1
+
+=== Ending
+
+If an `ending` is provided, it will be printed below the content.
+After the ending, the name of the sender will be printed with a certain margin to the top so that the signature can be placed between.
