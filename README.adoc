@@ -39,6 +39,16 @@ will be printed out as
 
 > Item 1: Text for item 1
 
+=== Date
+
+The date, which is printed in the letter, will be automatically formatted with the system default language format for dates/time.
+The used locale can be customized, e.g.:
+
+[source, yaml]
+----
+locale: en_US
+----
+
 === Ending
 
 If an `ending` is provided, it will be printed below the content.

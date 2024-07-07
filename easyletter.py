@@ -8,6 +8,8 @@ import ttf_opensans
 import locale
 
 
+DEFAULT_FONT_SIZE = 12
+
 @click.command()
 @click.argument('yaml_path', type=click.Path(exists=True))
 def write_letter(yaml_path):
@@ -27,8 +29,7 @@ def create_pdf(document) -> FPDF:
     pdf = FPDF(format='A4')
     pdf.add_page()
     
-    font_size = 12
-    line_height = font_size / 2
+    line_height = DEFAULT_FONT_SIZE / 2
     font_name = 'open-sans'
     pdf.add_font(
         family=font_name,
@@ -57,7 +58,7 @@ def create_pdf(document) -> FPDF:
     )
     
     recipient = document.get('address').get('recipient')
-    pdf.set_font(font_name, size=font_size)
+    pdf.set_font(font_name, size=DEFAULT_FONT_SIZE)
     pdf.set_y(50)
     pdf.multi_cell(
         text=recipient,
@@ -66,7 +67,8 @@ def create_pdf(document) -> FPDF:
     )
     
     location = document.get('location')
-    formatted_date = datetime.now().strftime("%d.%m.%Y")
+    configure_locale(document)
+    formatted_date = datetime.now().strftime('%x')
     pdf.set_y(100)
     pdf.cell(
         text=f"__{location}, den {formatted_date}__",
@@ -127,6 +129,13 @@ def create_pdf(document) -> FPDF:
     pdf.cell(text="-")
     
     return pdf
+
+def configure_locale(document):
+    defined_locale = document.get('locale')
+    if defined_locale is None:
+        locale.setlocale(locale.LC_TIME, '')
+    else:
+        locale.setlocale(locale.LC_TIME, locale=f"{defined_locale}.UTF-8")
 
 def output_path(input_path) -> str:
     pdf_base_file_name=Path(input_path).stem
