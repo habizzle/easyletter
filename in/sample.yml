@@ -8,8 +8,8 @@ address:
     Zielstraße 1
     98765 Mausstadt
 contact:
-  email: test@istkorrekt.de
-  phone: (+49) 1234 56789
+  'E-Mail': test@istkorrekt.de
+  'Telefon': (+49) 1234 56789
 location: Hasenhausen
 subject: Test subject
 content: |-

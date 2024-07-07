@@ -91,13 +91,16 @@ def parse_yaml(yaml_path):
             pdf.set_y(pdf.get_y() + 30)
             pdf.cell(text=signature_name)
             
-            contact_email = document.get('contact').get('email')
-            contact_phone = document.get('contact').get('phone')
+            contact = document.get('contact')
+            contact_items = []
+            for key, value in contact.items():
+                contact_items.append(f"{key}: {value}")
+            formatted_contact="\n".join(contact_items)
+            
             contact = f"""
             {sender_block}
             
-            E-Mail: {contact_email}
-            Telefon: {contact_phone}
+            {formatted_contact}
             """
             pdf.set_xy(-100, 25)
             pdf.set_font(font_name, size=10)
@@ -107,6 +110,12 @@ def parse_yaml(yaml_path):
                 w=90,
                 h=5
             )
+            
+            # for folding
+            pdf.set_xy(5, 105)
+            pdf.cell(text="-")
+            pdf.set_xy(5, 210)
+            pdf.cell(text="-")
             
             pdf_base_file_name=Path(yaml_path).stem
             pdf_dir="out"

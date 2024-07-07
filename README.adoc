@@ -18,3 +18,21 @@ $ pipenv run python easyletter.py in/sample.yml
 ----
 
 You can modify the content of the letter by customizing either the provided YAML file or by creating a new file
+
+== Configurations
+
+All relevant configurations can be looked up in `in/sample.yml`.
+
+In the `contact` section, you can add arbitrary properties.
+All properties will be printed in a box to the right, directly below the sender address.
+The property key will be printed out, so they can be escaped with single quotes, e.g.:
+
+[source, yaml]
+----
+contact:
+  'Item 1': Text for item 1
+----
+
+will be printed out as
+
+> Item 1: Text for item 1
