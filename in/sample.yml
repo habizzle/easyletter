@@ -6,7 +6,10 @@ address:
   recipient: |-
     Jane Doe
     Zielstraße 1
-    98765 Berlinchen
+    98765 Mausstadt
+contact:
+  email: test@istkorrekt.de
+  phone: (+49) 1234 56789
 location: Hasenhausen
 subject: Test subject
 content: |-
@@ -14,6 +17,3 @@ content: |-
 
   hört, hört! Das ist ja __toll__!
 ending: Beste Grüße
-contact:
-  email: test@istkorrekt.de
-  phone: (+49) 1234 56789

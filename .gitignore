@@ -1,4 +1,6 @@
 build/
 dist/
+in/*
+!in/sample.yml
 out/
 .venv/
