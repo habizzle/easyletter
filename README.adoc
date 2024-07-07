@@ -10,11 +10,11 @@ easyletter allows you to create simple, formal documents, which are oriented at 
 
 == Install & Use
 
-The tool is Python based and can be installed with `pipenv`.
+The tool is Python based and can be installed and run with `pipenv`.
 
 [source, shell]
 ----
-$ pipenv run python easyletter.py samples/test.yaml
+$ pipenv run python easyletter.py in/sample.yml
 ----
 
-You can modify the content of the letter by customizing either the provided YAML file.
+You can modify the content of the letter by customizing either the provided YAML file or by creating a new file
