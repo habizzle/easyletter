@@ -23,7 +23,7 @@ Then run:
 
 [source, shell]
 ----
-$ pipenv run python easyletter.py in/sample.yml
+$ pipenv run python src/easyletter.py in/sample.yml
 ----
 
 You can modify the content of the letter by customizing either the provided YAML file or by creating a new file
