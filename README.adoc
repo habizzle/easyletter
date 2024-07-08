@@ -12,6 +12,15 @@ easyletter allows you to create simple, formal documents, which are oriented at 
 
 The tool is Python based and can be installed and run with `pipenv`.
 
+First, install:
+
+[source, shell]
+----
+$ pipenv install
+----
+
+Then run:
+
 [source, shell]
 ----
 $ pipenv run python easyletter.py in/sample.yml

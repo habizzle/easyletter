@@ -4,3 +4,4 @@ in/*
 !in/sample.yml
 out/
 .venv/
+.vscode/
