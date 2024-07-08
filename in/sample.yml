@@ -1,12 +1,11 @@
-address:
-  sender: |-
-    Max Mustermann
-    Teststrasse 123
-    12345 Hasenhausen
-  recipient: |-
-    Jane Doe
-    Zielstraße 1
-    98765 Mausstadt
+sender: |-
+  Max Mustermann
+  Teststrasse 123
+  12345 Hasenhausen
+recipient: |-
+  Jane Doe
+  Zielstraße 1
+  98765 Mausstadt
 contact:
   'E-Mail': test@istkorrekt.de
   'Telefon': (+49) 1234 56789
@@ -16,4 +15,5 @@ content: |-
   Sehr geehrte Damen und Herren,
 
   hört, hört! Das ist ja __toll__!
+  Noch eine Zeile...
 ending: Beste Grüße
