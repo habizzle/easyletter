@@ -1,7 +1,7 @@
 import click
 import os
 from pathlib import Path
-from parser import parse_letter
+from yaml_parser import parse_letter
 from pdf_creator import create_pdf
 
 @click.command()
